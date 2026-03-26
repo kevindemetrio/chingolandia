@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chingolandia — Mex Crazy Delights · Barcelona</title>
+<link rel="stylesheet" href="css/main.css">
+<style>
+body { padding-top: 68px; }
+
+/* HERO */
+.hero-section {
+  /* =====================================================
+     📸 FOTO HERO (portada)
+     Pon aquí la foto principal del restaurante.
+     Ejemplo: background-image: url('assets/portada.webp');
+     Recomendación: foto del interior o de los tacos, horizontal, mín. 1600x900px
+     ===================================================== */
+  background-color: var(--bg2);
+  background-image: url('assets/portada.webp');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 0 3.5rem;
+  position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--borde);
+}
+.hero-section::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(255,255,255,0.55);
+  z-index: 0;
+}
+.hero-section .container {
+  position: relative; z-index: 1;
+}
+.hero-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 75% 50%, rgba(255,45,120,0.07) 0%, transparent 60%);
+  z-index: 1;
+}
+.hero-deco {
+  position: absolute; right: -1rem; top: 50%; transform: translateY(-50%);
+  font-family: 'Berkshire Swash', cursive;
+  font-size: clamp(10rem, 22vw, 20rem);
+  color: rgba(255,45,120,0.03); line-height: 1;
+  white-space: nowrap; pointer-events: none; user-select: none;
+}
+.hero-inner {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center;
+}
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.9); border: 1px solid rgba(0,0,0,0.1);
+  color: var(--texto); padding: 0.38rem 1rem; border-radius: 2px;
+  font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
+  margin-bottom: 1.4rem;
+}
+.hero-pill::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--texto); }
+.hero-title { font-size: clamp(3rem, 7vw, 6rem); color: #111; margin-bottom: 1rem; text-shadow: 0 1px 8px rgba(255,255,255,0.6); }
+.hero-title span { color: var(--rosa); text-shadow: none; }
+.hero-sub { font-size: 1rem; color: #333; max-width: 420px; margin-bottom: 2rem; line-height: 1.75; font-weight: 500; }
+.hero-btns { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.hero-stats { display: flex; gap: 2.5rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--borde); background: rgba(255,255,255,0.7); border-radius: 16px; padding: 1.2rem 1.8rem; margin-top: 2rem; backdrop-filter: blur(4px); }
+.stat-num { font-family: 'Berkshire Swash', cursive; font-size: 2.2rem; color: var(--rosa); line-height: 1; }
+.stat-label { font-size: 0.72rem; color: #444; letter-spacing: 0.06em; margin-top: 0.1rem; font-weight: 500; }
+.hero-right { flex-shrink: 0; }
+.hero-badge {
+  width: 180px; height: 180px; border-radius: 50%;
+  background: var(--rosa-pale); border: 1px solid rgba(255,45,120,0.2);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  box-shadow: 0 8px 32px rgba(255,45,120,0.15);
+}
+.hero-badge img { width: 120px; }
+.hero-badge-sub { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gris); }
+
+/* ABOUT */
+.about-section { background: var(--bg); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.about-card {
+  /* =====================================================
+     📸 FOTO SECCIÓN "NOSOTROS" (lateral izquierdo)
+     Pon aquí una foto del equipo o del ambiente del restaurante.
+     Ejemplo: background-image: url('assets/foto-equipo.jpg');
+     Recomendación: foto cuadrada o vertical, mín. 600x600px
+     ===================================================== */
+  background-color: var(--rosa-pale);
+  background-image: url('assets/foto-nosotros.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255,45,120,0.15);
+  border-radius: var(--r); padding: 3rem; position: relative; overflow: hidden;
+}
+.about-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(255,240,245,0.88);
+}
+.about-card > * {
+  position: relative; z-index: 1;
+}
+.about-card::before { content:''; position:absolute; top:-50px; right:-50px; width:180px; height:180px; border-radius:50%; background:rgba(255,45,120,0.08); }
+.about-big { font-family: 'Bebas Neue',sans-serif; font-size: 5.5rem; color: var(--rosa); line-height:1; }
+.about-big-label { font-size: 0.82rem; color: var(--gris); margin-top: 0.2rem; }
+.about-divider { width: 36px; height: 1px; background: rgba(255,45,120,0.25); margin: 1.5rem 0; }
+.about-card-text { font-size: 0.9rem; color: var(--gris); line-height: 1.8; }
+.about-sub-badge {
+  position: absolute; bottom: -16px; right: 2rem;
+  background: var(--rosa); color: #fff;
+  font-family: 'Berkshire Swash', cursive; font-size: 1.1rem;
+  padding: 0.7rem 1.4rem; border-radius: var(--r);
+}
+.about-text h2 { margin-bottom: 1.2rem; color: var(--texto); }
+.about-desc { color: var(--gris); line-height: 1.85; margin-bottom: 1.5rem; }
+.feats { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1.5rem; margin-bottom: 2rem; }
+.feat { font-size: 0.85rem; color: var(--gris); display: flex; align-items: center; gap: 8px; }
+.feat::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--rosa); flex-shrink:0; }
+
+/* MENU PREVIEW */
+.menu-section { background: var(--bg2); }
+.sec-header { display: flex; justify-content:space-between; align-items:flex-end; margin-bottom:3.5rem; flex-wrap:wrap; gap:1rem; }
+.menu-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.mc { background: var(--bg); border: 1px solid var(--borde); border-radius: 20px; overflow: hidden; transition: all 0.22s; }
+.mc:hover { transform: translateY(-4px); border-color: rgba(255,45,120,0.3); box-shadow: 0 8px 30px rgba(255,45,120,0.08); }
+.mc-top { height: 170px; display: flex; align-items:center; justify-content:center; font-size:3.5rem; position:relative; }
+.t1{background:linear-gradient(135deg,#1B2F1E,#2D5C33)}
+.t2{background:linear-gradient(135deg,#2B0A18,#6B1A3A)}
+.t3{background:linear-gradient(135deg,#0D1A2B,#1A3A6B)}
+.t4{background:linear-gradient(135deg,#1E1200,#4A2E00)}
+.t5{background:linear-gradient(135deg,#1A1A1A,#3A3A3A)}
+.t6{background:linear-gradient(135deg,#1A0A1E,#3D1555)}
+.mc-tag { position:absolute; top:.7rem; left:.7rem; background:rgba(0,0,0,.45); color:rgba(255,255,255,.85); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; padding:.22rem .55rem; border-radius:2px; backdrop-filter:blur(4px); }
+.mc-body { padding: 1.2rem; }
+.mc-name { font-family:'Berkshire Swash',cursive; font-size:1.4rem; margin-bottom:.3rem; color:var(--texto); }
+.mc-desc { font-size:.82rem; color:var(--gris); line-height:1.6; margin-bottom:.9rem; }
+.mc-foot { display:flex; justify-content:space-between; align-items:center; }
+.mc-price { font-family:'Berkshire Swash',cursive; font-size:1.5rem; color:var(--rosa); }
+
+/* EVENTS */
+.events-section { background: var(--bg); }
+.events-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; margin-top:3rem; }
+.ev { background:var(--bg2); border:1px solid var(--borde); border-radius:20px; padding:2rem; transition:all 0.22s; }
+.ev:hover { border-color:rgba(255,45,120,0.25); transform:translateY(-3px); box-shadow:0 6px 20px rgba(255,45,120,0.06); }
+.ev-icon { font-size:2rem; margin-bottom:1rem; }
+.ev-title { font-family:'Berkshire Swash',cursive; font-size:1.6rem; margin-bottom:.5rem; color:var(--texto); }
+.ev-desc { font-size:.86rem; color:var(--gris); line-height:1.75; }
+.ev-link { display:inline-flex; align-items:center; gap:5px; margin-top:1rem; color:var(--rosa); font-size:.78rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; transition:gap .15s; }
+.ev-link:hover { gap:9px; }
+
+/* REVIEWS */
+.reviews-section { background: var(--bg2); }
+.reviews-top { text-align:center; margin-bottom:4rem; }
+.big-rat { display:flex; align-items:center; justify-content:center; gap:1.5rem; margin-top:1.5rem; flex-wrap:wrap; }
+.big-rat-num { font-family:'Berkshire Swash',cursive; font-size:5rem; color:var(--texto); line-height:1; }
+.stars { color:var(--rosa); letter-spacing:2px; }
+.reviews-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.rev { background:var(--bg); border:1px solid var(--borde); border-radius:20px; padding:1.8rem; }
+.rev-quote { font-size:2rem; color:var(--rosa); line-height:1; margin-bottom:.4rem; }
+.rev-text { font-size:.88rem; color:var(--gris); line-height:1.78; font-style:italic; margin-bottom:1.1rem; }
+.rev-author { font-size:.8rem; font-weight:600; color:var(--texto); }
+
+/* CTA */
+.cta-section {
+  /* =====================================================
+     📸 FOTO SECCIÓN FINAL (banner de llamada a la acción)
+     Pon aquí una foto de la terraza, del ambiente nocturno o de los platos.
+     Ejemplo: background-image: url('assets/foto-cta.jpg');
+     Recomendación: foto horizontal oscura o vibrante, mín. 1600x700px
+     ===================================================== */
+  background-color: var(--rosa);
+  background-image: url('assets/foto-cta.jpg');
+  background-size: cover;
+  background-position: center;
+  padding:6rem 0; text-align:center; position:relative; overflow:hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(255,45,120,0.82);
+  z-index: 0;
+}
+.cta-section .container { position:relative; z-index:1; }
+
+.cta-section .container { position:relative; z-index:1; }
+.cta-section h2 { color:#fff; margin-bottom:.8rem; }
+.cta-section p { color:rgba(255,255,255,.85); font-size:1.05rem; margin-bottom:2.5rem; }
+.cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+
+@media (max-width:1000px) {
+  .hero-inner { grid-template-columns:1fr; }
+  .hero-right { display:none; }
+  .about-grid { grid-template-columns:1fr; gap:4rem; }
+  .menu-grid { grid-template-columns:1fr 1fr; }
+  .reviews-grid { grid-template-columns:1fr; }
+}
+@media (max-width:600px) {
+  .menu-grid { grid-template-columns:1fr; }
+  .events-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero-section">
+  <div class="hero-deco">MEX</div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-pill">Restaurante Mexicano · L'Eixample · Barcelona</div>
+        <h1 class="hero-title">Crazy <span>Mex</span><br>Delights</h1>
+        <p class="hero-sub">Los sabores más atrevidos y vibrantes de México, elaborados con ingredientes auténticos en el corazón de Barcelona.</p>
+        <div class="hero-btns">
+          <a href="reservas.html" class="btn btn-primary">Reservar mesa</a>
+          <a href="menu.html" class="btn btn-outline">Ver la carta</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="stat-num">4.6</div><div class="stat-label">Valoración Google</div></div>
+          <div><div class="stat-num">570+</div><div class="stat-label">Opiniones</div></div>
+          <div><div class="stat-num">100%</div><div class="stat-label">Auténtico</div></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-badge">
+          <img src="assets/logo.svg" alt="Chingolandia">
+          <div class="hero-badge-sub">Since 2022</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="fade-up" style="position:relative">
+        <div class="about-card">
+          <div class="about-big">4.6</div>
+          <div class="about-big-label">★★★★★ · Más de 570 reseñas</div>
+          <div class="about-divider"></div>
+          <p class="about-card-text">Ingredientes auténticos, sabores que te transportan y una cocina que no pide perdón por ser lo que es.</p>
+        </div>
+        <div class="about-sub-badge">Crazy Mex</div>
+      </div>
+      <div class="fade-up" data-delay="2">
+        <p class="section-label">Nuestra historia</p>
+        <h2 class="about-text">Auténtica cocina<br>mexicana en BCN</h2>
+        <p class="about-desc" style="margin-top:1.2rem">En Chingolandia te traemos los sabores más atrevidos de México. Desde tacos clásicos hasta especialidades elaboradas con ingredientes seleccionados y pasión genuina.</p>
+        <div class="feats">
+          <div class="feat">Ingredientes importados</div>
+          <div class="feat">Opciones veganas</div>
+          <div class="feat">Delivery y recogida</div>
+          <div class="feat">Happy hour diario</div>
+          <div class="feat">Eventos privados</div>
+          <div class="feat">Terraza disponible</div>
+        </div>
+        <a href="menu.html" class="btn btn-dark">Explorar el menú</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="menu-section">
+  <div class="container">
+    <div class="sec-header fade-up">
+      <div><p class="section-label">La carta</p><h2>Especialidades</h2></div>
+      <a href="menu.html" class="btn btn-outline">Ver carta completa →</a>
+    </div>
+    <div class="menu-grid">
+      <div class="mc fade-up" data-delay="1"><div class="mc-top t1"><span>🌮</span><span class="mc-tag">Clásico</span></div><div class="mc-body"><div class="mc-name">Tacos de Birria</div><p class="mc-desc">Ternera adobada con chiles, jitomates y canela. Con caldo de birria y cebolla.</p><div class="mc-foot"><span class="mc-price">€9</span><span class="tag">3 ud</span></div></div></div>
+      <div class="mc fade-up" data-delay="2"><div class="mc-top t2"><span>🫔</span><span class="mc-tag">Favorito</span></div><div class="mc-body"><div class="mc-name">Quesabirria</div><p class="mc-desc">Birria con queso gouda a la plancha, caldo y cebolla con cilantro.</p><div class="mc-foot"><span class="mc-price">€10</span><span class="tag">Bestseller</span></div></div></div>
+      <div class="mc fade-up" data-delay="3"><div class="mc-top t3"><span>🍹</span><span class="mc-tag">Cócteles</span></div><div class="mc-body"><div class="mc-name">Chinga Margarita</div><p class="mc-desc">Tequila Silver 100% agave, Triple Sec y zumo de lima fresca.</p><div class="mc-foot"><span class="mc-price">€10</span><span class="tag">Signature</span></div></div></div>
+      <div class="mc fade-up" data-delay="1"><div class="mc-top t4"><span>🥑</span><span class="mc-tag">Compartir</span></div><div class="mc-body"><div class="mc-name">Nachos Especiales</div><p class="mc-desc">Sin gluten, con queso cheddar y pico de gallo. Añade proteína.</p><div class="mc-foot"><span class="mc-price">€8</span><span class="tag">Sin gluten</span></div></div></div>
+      <div class="mc fade-up" data-delay="2"><div class="mc-top t5"><span>🫕</span><span class="mc-tag">Especialidad</span></div><div class="mc-body"><div class="mc-name">Enchiladas Verdes</div><p class="mc-desc">Rellenas de pollo, bañadas en salsa verde, crema y queso fresco.</p><div class="mc-foot"><span class="mc-price">€10</span><span class="tag">Chef's pick</span></div></div></div>
+      <div class="mc fade-up" data-delay="3"><div class="mc-top t6"><span>🍮</span><span class="mc-tag">Postre</span></div><div class="mc-body"><div class="mc-name">Pastel Tres Leches</div><p class="mc-desc">Bizcocho de vainilla bañado en leche evaporada, condensada y crema.</p><div class="mc-foot"><span class="mc-price">€8</span><span class="tag">Casero</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="events-section">
+  <div class="container">
+    <div class="fade-up"><p class="section-label">Más que un restaurante</p><h2>Eventos & Experiencias</h2></div>
+    <div class="events-grid">
+      <div class="ev fade-up" data-delay="1"><div class="ev-icon">🎉</div><h3 class="ev-title">Grupos & Eventos Privados</h3><p class="ev-desc">Zona reservada y menú personalizado. Celebra como mereces.</p><a href="eventos.html" class="ev-link">Más información →</a></div>
+      <div class="ev fade-up" data-delay="2"><div class="ev-icon">🍹</div><h3 class="ev-title">Happy Hour</h3><p class="ev-desc">Cócteles y cervezas mexicanas a precio especial. Lunes a viernes.</p><a href="menu.html#bebidas" class="ev-link">Ver oferta →</a></div>
+      <div class="ev fade-up" data-delay="3"><div class="ev-icon">🛵</div><h3 class="ev-title">Pedidos a Domicilio</h3><p class="ev-desc">Toda la carta disponible para delivery o recogida en local.</p><a href="pedidos.html" class="ev-link">Pedir ahora →</a></div>
+      <div class="ev fade-up" data-delay="4"><div class="ev-icon">🌙</div><h3 class="ev-title">Noche Mexicana</h3><p class="ev-desc">Los viernes: música en vivo, cócteles de autor y ambiente único.</p><a href="eventos.html" class="ev-link">Ver eventos →</a></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="reviews-section">
+  <div class="container">
+    <div class="reviews-top fade-up">
+      <p class="section-label" style="justify-content:center">Opiniones reales</p>
+      <h2>Lo que dicen nuestros clientes</h2>
+      <div class="big-rat">
+        <div class="big-rat-num">4.6</div>
+        <div><div class="stars" style="font-size:1.3rem">★★★★★</div><p style="font-size:.82rem;color:var(--gris);margin-top:.3rem">Más de 570 opiniones en Google</p></div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="rev fade-up" data-delay="1"><div class="rev-quote">"</div><p class="rev-text">Los mejores tacos de Barcelona sin duda. La birria es espectacular y las margaritas las más auténticas fuera de México.</p><div class="rev-author">Nalle M. <span class="stars" style="font-size:.7rem;letter-spacing:1px;margin-left:6px">★★★★★</span></div></div>
+      <div class="rev fade-up" data-delay="2"><div class="rev-quote">"</div><p class="rev-text">Fuimos a celebrar un cumpleaños y nos trataron increíble. El ambiente vivo, la comida riquísima y el personal súper amable.</p><div class="rev-author">Leo D. <span class="stars" style="font-size:.7rem;letter-spacing:1px;margin-left:6px">★★★★★</span></div></div>
+      <div class="rev fade-up" data-delay="3"><div class="rev-quote">"</div><p class="rev-text">Experiencia muy auténtica, se nota que usan ingredientes de calidad. Las enchiladas me transportaron directamente a México.</p><div class="rev-author">Marco A. <span class="stars" style="font-size:.7rem;letter-spacing:1px;margin-left:6px">★★★★☆</span></div></div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem" class="fade-up">
+      <a href="opiniones.html" class="btn btn-outline">Ver todas las opiniones</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>¿A qué esperas?</h2>
+    <p>Reserva tu mesa o pide a domicilio. La fiesta mexicana te espera.</p>
+    <div class="cta-btns">
+      <a href="reservas.html" class="btn btn-white">Reservar mesa</a>
+      <a href="pedidos.html" class="btn btn-ghost">Pedir a domicilio</a>
+    </div>
+  </div>
+</section>
+
+<script src="js/layout.js"></script>
+</body>
+</html>

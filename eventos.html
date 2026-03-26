@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Grupos & Eventos — Chingolandia</title><link rel="stylesheet" href="css/main.css"><style>
+body{padding-top:68px;background:var(--bg);color:var(--texto)}
+.ph h1,.ph h2,.ph p,.ph .lead,.ph .section-label{color:#111!important}.ph{
+  /* =====================================================
+     📸 FOTO CABECERA EVENTOS
+     Pon una foto de un evento o celebración en el restaurante.
+     Ejemplo: background-image: url('assets/portada.webp');
+     ===================================================== */
+  padding:4.5rem 0 3rem;
+  background-color:var(--bg2);
+  background-image:url('assets/portada.webp');
+  background-size:cover; background-position:center;
+  border-bottom:1px solid var(--borde);
+  position:relative;
+}
+.ph::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,0.55)}
+.ph .container{position:relative;z-index:1}
+.lay{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:4rem}
+.fl{display:flex;flex-direction:column;gap:1px;border:1px solid var(--borde)}
+.fi{padding:2rem 1.8rem;border-bottom:1px solid var(--borde);background:var(--bg);transition:background .2s}
+.fi:last-child{border-bottom:none}
+.fi:hover{background:var(--rosa-pale)}
+.fi h4{font-family:'Berkshire Swash',cursive;font-size:1.5rem;color:var(--texto);margin-bottom:.4rem}
+.fi p{font-size:.85rem;color:var(--gris);line-height:1.75}
+.fc{background:url('assets/portada.webp') center/cover no-repeat;padding:2.5rem;border:1px solid var(--borde);border-radius:16px;position:sticky;top:88px}
+.fc h3{font-family:'Berkshire Swash',cursive;font-size:2rem;color:var(--texto);margin-bottom:.4rem}
+.fc>p{font-size:.88rem;color:var(--gris);margin-bottom:2rem}
+.fok{display:none;text-align:center;padding:3rem 1rem}
+.fok h3{font-family:'Berkshire Swash',cursive;font-size:2.2rem;color:var(--rosa);margin-bottom:.6rem}
+.fok p{color:var(--gris);font-size:.9rem;line-height:1.75}
+@media(max-width:900px){.lay{grid-template-columns:1fr}.fc{position:static}}
+</style></head><body>
+<div class="ph"><div class="container"><span class="section-label">Más que una cena</span><h1>Grupos &<br><span style="color:var(--rosa)">Eventos</span></h1><p class="lead" style="margin-top:.8rem;color:#333">Cumpleaños, despedidas, eventos de empresa — lo hacemos memorable.</p></div></div>
+<section style="background:var(--bg)"><div class="container"><div class="lay">
+  <div>
+    <span class="section-label fade-up">Lo que incluye</span>
+    <h2 class="fade-up" style="color:var(--texto)">Todo lo que necesitas para celebrar</h2>
+    <div class="fl" style="margin-top:2rem">
+      <div class="fi fade-up" data-delay="1"><h4>Menú personalizado</h4><p>Diseñamos un menú a medida con opciones para todos los gustos y necesidades dietéticas.</p></div>
+      <div class="fi fade-up" data-delay="2"><h4>Zona reservada</h4><p>Espacio privado con capacidad para grupos. Intimidad garantizada para celebrar a tu manera.</p></div>
+      <div class="fi fade-up" data-delay="3"><h4>Cócteles & barra</h4><p>Margaritas, cervezas mexicanas y cócteles de la casa. Opción de precio cerrado por persona.</p></div>
+      <div class="fi fade-up" data-delay="4"><h4>Atención exclusiva</h4><p>Personal dedicado para tu grupo. Coordinamos cada detalle para que sea perfecto.</p></div>
+      <div class="fi fade-up" data-delay="5"><h4>Tipos de eventos</h4><p>Cumpleaños · Despedidas · Eventos de empresa · Aniversarios · Graduaciones</p></div>
+    </div>
+  </div>
+  <div class="fade-up" data-delay="2">
+    <div class="fc">
+      <h3>Contactar</h3>
+      <p>Cuéntanos tu evento y te respondemos en menos de 24h.</p>
+      <form id="ef" onsubmit="okf(event)">
+        <div class="form-row"><div class="form-group"><label>Nombre *</label><input type="text" required placeholder="Tu nombre"></div><div class="form-group"><label>Apellidos *</label><input type="text" required></div></div>
+        <div class="form-row"><div class="form-group"><label>Email *</label><input type="email" required placeholder="tu@email.com"></div><div class="form-group"><label>Teléfono *</label><input type="tel" required></div></div>
+        <div class="form-row"><div class="form-group"><label>Tipo de evento</label><select><option>Seleccionar...</option><option>Cumpleaños</option><option>Despedida de soltero/a</option><option>Evento de empresa</option><option>Aniversario</option><option>Graduación</option><option>Otro</option></select></div><div class="form-group"><label>Nº de personas</label><select><option>10–15</option><option>15–20</option><option>20–30</option><option>30–40</option><option>+40</option></select></div></div>
+        <div class="form-row"><div class="form-group"><label>Fecha</label><input type="date"></div><div class="form-group"><label>Hora</label><input type="time"></div></div>
+        <div class="form-group"><label>Cuéntanos más</label><textarea placeholder="Describe tu evento, necesidades especiales..."></textarea></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Enviar solicitud</button>
+      </form>
+      <div class="fok" id="fo"><div style="font-size:2.5rem;margin-bottom:1rem">🎉</div><h3>¡Recibido!</h3><p>Te contactamos en menos de 24 horas para organizar todos los detalles.</p></div>
+    </div>
+  </div>
+</div></div></section>
+<script src="js/layout.js"></script>
+<script>function okf(e){e.preventDefault();document.getElementById('ef').style.display='none';document.getElementById('fo').style.display='block'}</script>
+</body></html>

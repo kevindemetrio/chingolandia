@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Contacto — Chingolandia</title><link rel="stylesheet" href="css/main.css"><style>
+body{padding-top:68px;background:var(--bg);color:var(--texto)}
+.ph{
+  /* =====================================================
+     📸 FOTO CABECERA CONTACTO
+     Pon una foto de la fachada o entrada del restaurante.
+     Ejemplo: background-image: url('assets/foto-fachada.jpg');
+     ===================================================== */
+  padding:4.5rem 0 3rem;
+  background:var(--bg2);
+  border-bottom:1px solid var(--borde);
+  position:relative;
+}
+
+.ph .container{position:relative;z-index:1}
+.lay{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:4rem}
+.is{position:sticky;top:88px;display:flex;flex-direction:column;gap:3rem}
+.ib h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rosa);font-weight:600;margin-bottom:.8rem}
+.ib p,.ib a{font-size:.9rem;color:var(--gris);line-height:1.8;text-decoration:none}
+.ib a:hover{color:var(--rosa)}
+.mb{border:1px solid var(--borde);overflow:hidden;margin-bottom:3rem;border-radius:16px}
+.mb iframe{width:100%;height:250px;border:none;display:block}
+.mbf{padding:.9rem 1.2rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--borde);flex-wrap:wrap;gap:.5rem}
+.mbf p{font-size:.82rem;color:var(--gris)}
+.hr{display:flex;justify-content:space-between;font-size:.88rem;padding:.4rem 0;border-bottom:1px solid var(--borde)}
+.hr:last-child{border-bottom:none}
+.hd{color:var(--gris)}.ht{color:var(--texto);font-weight:500}
+.hr.today .hd,.hr.today .ht{color:var(--rosa)}
+.td{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--rosa);margin-left:6px;vertical-align:middle}
+.fb{background:var(--rosa);padding:2.5rem;border:none;border-radius:16px}.fb label{color:rgba(255,255,255,0.9)!important}.fb input,.fb textarea,.fb select{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff}.fb input::placeholder,.fb textarea::placeholder{color:rgba(255,255,255,0.6)}.fb input:focus,.fb textarea:focus,.fb select:focus{background:rgba(255,255,255,0.25);border-color:#fff}.fb select option{background:var(--rosa);color:#fff}
+.fb h3{font-family:'Berkshire Swash',cursive;font-size:2rem;color:#fff;margin-bottom:.4rem}
+.fb>p{font-size:.88rem;color:rgba(255,255,255,0.85);margin-bottom:2rem}
+.fok{display:none;text-align:center;padding:3rem 1rem}
+.fok h3{font-family:'Berkshire Swash',cursive;font-size:2rem;color:var(--rosa);margin-bottom:.5rem}
+.fok p{color:var(--gris);font-size:.9rem;line-height:1.75}
+.qg{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:4rem}
+.qc{padding:1.5rem;border:1px solid var(--borde);text-decoration:none;text-align:center;transition:all .18s;border-radius:16px}
+.qc:hover{border-color:var(--rosa);background:var(--rosa-pale)}
+.qc h4{font-family:'Berkshire Swash',cursive;font-size:1.2rem;color:var(--texto);margin-bottom:.3rem}
+.qc p{font-size:.8rem;color:var(--gris)}
+@media(max-width:900px){.lay{grid-template-columns:1fr}.is{position:static}.qg{grid-template-columns:1fr 1fr}}
+</style></head><body>
+<div class="ph"><div class="container"><span class="section-label">Estamos aquí</span><h1>Contacto</h1><p class="lead" style="margin-top:.8rem">¿Tienes alguna pregunta? Estamos a un mensaje.</p></div></div>
+<section style="background:var(--bg)"><div class="container">
+  <div class="qg fade-up">
+    <a href="tel:+34611831570" class="qc"><h4>Teléfono</h4><p>+34 611 83 15 70</p></a>
+    <a href="reservas.html" class="qc"><h4>Reservas</h4><p>Reservar mesa online</p></a>
+    <a href="pedidos.html" class="qc"><h4>Pedidos</h4><p>Online o por teléfono</p></a>
+    <a href="eventos.html" class="qc"><h4>Eventos</h4><p>Grupos & privados</p></a>
+  </div>
+  <div class="lay">
+    <div class="is fade-up">
+      <div class="mb">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.49!2d2.158!3d41.379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDIyJzQ0LjYiTiAywrAwOSczNy42IkU!5e0!3m2!1ses!2ses!4v1" allowfullscreen loading="lazy" title="Chingolandia"></iframe>
+        <div class="mbf"><p>Carrer de Floridablanca, 108 · L'Eixample</p><a href="https://www.google.com/maps/dir/?api=1&destination=41.3796606,2.1604501" target="_blank" class="btn btn-outline" style="font-size:.75rem;padding:.5rem 1rem">Cómo llegar</a></div>
+      </div>
+      <div class="ib"><h4>Dirección</h4><p>Carrer de Floridablanca, 108<br>L'Eixample · 08015 Barcelona<br><br>Metro: L1 Rocafort · L2 Sant Antoni<br>Bus: 20, 55, 91, 120</p></div>
+      <div class="ib"><h4>Teléfono</h4><a href="tel:+34611831570" style="font-family:'Berkshire Swash',cursive;font-size:1.6rem;color:var(--rosa)">+34 611 83 15 70</a></div>
+      <div class="ib"><h4>Horarios</h4>
+        <div class="hr"><span class="hd">Lunes</span><span class="ht">13h–23:30h</span></div>
+        <div class="hr"><span class="hd">Martes</span><span class="ht">13h–23:30h</span></div>
+        <div class="hr"><span class="hd">Miércoles</span><span class="ht">13h–23:30h</span></div>
+        <div class="hr"><span class="hd">Jueves</span><span class="ht">13h–23:30h</span></div>
+        <div class="hr"><span class="hd">Viernes</span><span class="ht">13h–00:00h</span></div>
+        <div class="hr"><span class="hd">Sábado</span><span class="ht">12:30h–00:00h</span></div>
+        <div class="hr"><span class="hd">Domingo</span><span class="ht">12:30h–22:30h</span></div>
+      </div>
+    </div>
+    <div class="fade-up" data-delay="2">
+      <div class="fb">
+        <h3>Envíanos un mensaje</h3>
+        <p>Para consultas generales, alergias o cualquier pregunta. Te respondemos en menos de 24h.</p>
+        <form id="cf" onsubmit="okc(event)">
+          <div class="form-row"><div class="form-group"><label>Nombre *</label><input type="text" required placeholder="Tu nombre"></div><div class="form-group"><label>Apellidos *</label><input type="text" required></div></div>
+          <div class="form-row"><div class="form-group"><label>Email *</label><input type="email" required placeholder="tu@email.com"></div><div class="form-group"><label>Teléfono</label><input type="tel" placeholder="+34 600 000 000"></div></div>
+          <div class="form-group"><label>Asunto</label><select><option>Seleccionar...</option><option>Consulta general</option><option>Alergias e intolerancias</option><option>Reservas y grupos</option><option>Pedidos a domicilio</option><option>Prensa y colaboraciones</option><option>Otro</option></select></div>
+          <div class="form-group"><label>Mensaje *</label><textarea required placeholder="¿En qué podemos ayudarte?"></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Enviar mensaje</button>
+        </form>
+        <div class="fok" id="co"><div style="font-size:2.5rem;margin-bottom:1rem">🌮</div><h3>¡Mensaje recibido!</h3><p>Te responderemos en menos de 24 horas. ¡Hasta pronto en Chingolandia!</p></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+<script src="js/layout.js"></script>
+<script>function okc(e){e.preventDefault();document.getElementById('cf').style.display='none';document.getElementById('co').style.display='block'}const days=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];const today=days[new Date().getDay()];document.querySelectorAll('.hd').forEach(el=>{if(el.textContent.trim()===today){el.closest('.hr').classList.add('today');el.innerHTML+=`<span class="td"></span>`}});</script>
+</body></html>

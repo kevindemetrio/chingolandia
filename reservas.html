@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Reservas — Chingolandia</title><link rel="stylesheet" href="css/main.css"><style>
+body{padding-top:68px;background:var(--bg);color:var(--texto)}
+.ph h1,.ph h2,.ph p,.ph .lead,.ph .section-label{color:#111!important}.ph{padding:4.5rem 0 3rem;background:url('assets/portada.webp') center center / cover no-repeat;border-bottom:1px solid var(--borde);position:relative}.ph::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,0.55)}.ph .container{position:relative;z-index:1}
+.rl{display:grid;grid-template-columns:300px 1fr;gap:4rem;align-items:start;margin-top:4rem}
+.ri{position:sticky;top:88px}
+.ib{margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--borde)}
+.ib:last-child{border-bottom:none}
+.ib h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rosa);font-weight:600;margin-bottom:.8rem}
+.hr{display:flex;justify-content:space-between;font-size:.88rem;padding:.4rem 0}
+.hd{color:var(--gris)}.ht{color:var(--texto);font-weight:500}
+.hr.today .hd,.hr.today .ht{color:var(--rosa)}
+.td{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--rosa);margin-left:6px;vertical-align:middle}
+.ifw{border:1px solid var(--borde);background:url('assets/portada.webp') center/cover no-repeat;min-height:680px;overflow:hidden;border-radius:16px}
+.ifw iframe{width:100%;min-height:680px;border:none;display:block}
+.phbar{background:var(--rosa-pale);border:1px solid rgba(255,45,120,.2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;margin-top:1rem;flex-wrap:wrap;gap:.8rem;border-radius:16px}
+.phbar p{font-size:.85rem;color:var(--gris)}
+.phbar a{color:var(--rosa);font-weight:500;text-decoration:none;font-size:.88rem}
+@media(max-width:900px){.rl{grid-template-columns:1fr}.ri{position:static}}
+</style></head><body>
+<div class="ph"><div class="container"><span class="section-label">Asegura tu mesa</span><h1>Reservas</h1><p class="lead" style="margin-top:.8rem;color:#333">Reserva online en segundos o llámanos directamente.</p></div></div>
+<section style="background:var(--bg)"><div class="container"><div class="rl">
+  <div class="ri fade-up">
+    <div class="ib"><h4>Horarios</h4>
+      <div class="hr"><span class="hd">Lunes</span><span class="ht">13h–23:30h</span></div>
+      <div class="hr"><span class="hd">Martes</span><span class="ht">13h–23:30h</span></div>
+      <div class="hr"><span class="hd">Miércoles</span><span class="ht">13h–23:30h</span></div>
+      <div class="hr"><span class="hd">Jueves</span><span class="ht">13h–23:30h</span></div>
+      <div class="hr"><span class="hd">Viernes</span><span class="ht">13h–00:00h</span></div>
+      <div class="hr"><span class="hd">Sábado</span><span class="ht">12:30h–00:00h</span></div>
+      <div class="hr"><span class="hd">Domingo</span><span class="ht">12:30h–22:30h</span></div>
+    </div>
+    <div class="ib"><h4>Dirección</h4><p style="font-size:.88rem;color:var(--gris);line-height:1.8">Carrer de Floridablanca, 108<br>L'Eixample · 08015 Barcelona</p><a href="https://www.google.com/maps/dir/?api=1&destination=41.3796606,2.1604501" target="_blank" class="btn btn-outline" style="margin-top:1rem;font-size:.75rem;padding:.55rem 1.2rem">Ver en Google Maps</a></div>
+    <div class="ib"><h4>¿Prefieres llamar?</h4><a href="tel:+34611831570" style="font-family:'Berkshire Swash',cursive;font-size:1.5rem;color:var(--rosa);text-decoration:none">+34 611 83 15 70</a></div>
+  </div>
+  <div class="fade-up" data-delay="2">
+    <div class="ifw"><iframe src="https://www.e-restaurants.es/reservation/chingolandia-barcelona?channel=website" title="Reservar mesa" allow="payment" loading="lazy"></iframe></div>
+    <div class="phbar"><p>¿Problemas con el formulario?</p><a href="tel:+34611831570">Llámanos: +34 611 83 15 70</a></div>
+  </div>
+</div></div></section>
+<script src="js/layout.js"></script>
+<script>const days=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];const today=days[new Date().getDay()];document.querySelectorAll('.hd').forEach(el=>{if(el.textContent.trim()===today){el.closest('.hr').classList.add('today');el.innerHTML+=`<span class="td"></span>`}});</script>
+</body></html>

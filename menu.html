@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menú — Chingolandia</title>
+<link rel="stylesheet" href="css/main.css">
+<style>
+body { padding-top: 68px; background: var(--bg); color: var(--texto); }
+.page-header h1,.page-header h2,.page-header p,.page-header .lead,.page-header .section-label{color:#111!important}.page-header {
+  /* =====================================================
+     📸 FOTO CABECERA MENÚ
+     Pon una foto de platos, tacos o ambiente de mesa.
+     Ejemplo: background-image: url('assets/portada.webp');
+     Recomendación: foto horizontal vibrante con comida, mín. 1600x600px
+     ===================================================== */
+  padding: 4.5rem 0 3rem;
+  background-color: var(--bg2);
+  background-image: url('assets/portada.webp');
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid var(--borde);
+  position: relative;
+}
+.page-header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(255,255,255,0.55);
+}
+.page-header .container { position: relative; z-index: 1; }
+.tabs-bar { position: sticky; top: 68px; z-index: 100; background: #fff; border-bottom: 1px solid var(--borde); padding: 0 2rem; }
+.tabs { max-width: 1280px; margin: 0 auto; display: flex; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { padding: 1rem 1.1rem; white-space: nowrap; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.18s; }
+.tab.active, .tab:hover { color: var(--rosa); border-bottom-color: var(--rosa); }
+.menu-cat { padding: 4.5rem 0; border-bottom: 1px solid var(--borde); }
+.menu-cat:last-child { border-bottom: none; }
+.cat-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 2.5rem; }
+.cat-name { font-family: 'Berkshire Swash', cursive; font-size: clamp(2rem, 5vw, 4rem); color: var(--texto); }
+.cat-note { font-size: 0.88rem; color: var(--gris); }
+.items { display: flex; flex-direction: column; }
+.item { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; padding: 1.4rem 0; border-bottom: 1px solid var(--borde); transition: background 0.15s; }
+.item:first-child { border-top: 1px solid var(--borde); }
+.item:hover { background: var(--rosa-pale); margin: 0 -1rem; padding-left: 1rem; padding-right: 1rem; border-radius: var(--r); }
+.iname { font-family: 'Berkshire Swash', cursive; font-size: 1.45rem; color: var(--texto); margin-bottom: 0.25rem; }
+.idesc { font-size: 0.85rem; color: var(--gris); line-height: 1.65; }
+.itags { display: flex; gap: 0.35rem; margin-top: 0.5rem; flex-wrap: wrap; }
+.iprice { font-family: 'Berkshire Swash', cursive; font-size: 1.6rem; color: var(--rosa); white-space: nowrap; }
+.drink-nav { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.dnav { padding: 0.45rem 1.1rem; border-radius: 40px; border: 1.5px solid var(--borde); font-size: 0.78rem; font-weight: 600; background: none; color: var(--gris); cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.18s; }
+.dnav.active { background: var(--rosa); border-color: var(--rosa); color: #fff; }
+.dnav:hover:not(.active) { border-color: var(--rosa); color: var(--rosa); }
+.dpanel { display: none; }
+.dpanel.active { display: flex; flex-direction: column; }
+.cg { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.cc { background: var(--bg2); border: 1px solid var(--borde); border-radius: 20px; padding: 1.8rem; transition: border-color 0.18s; }
+.cc:hover { border-color: rgba(255,45,120,0.3); }
+.cname { font-family: 'Berkshire Swash', cursive; font-size: 1.5rem; color: var(--texto); margin-bottom: 0.5rem; }
+.cdesc { font-size: 0.83rem; color: var(--gris); line-height: 1.7; }
+.cprice { font-family: 'Berkshire Swash', cursive; font-size: 1.6rem; color: var(--rosa); margin-top: 1rem; }
+.extras-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+.extra { display: flex; justify-content: space-between; padding: 0.8rem 1rem; background: var(--bg2); border: 1px solid var(--borde); border-radius: 12px; font-size: 0.88rem; color: var(--texto); }
+.eprice { color: var(--rosa); font-family: 'Berkshire Swash', cursive; font-size: 1.1rem; }
+.note-bar { background: var(--rosa-pale); border: 1px solid rgba(255,45,120,0.2); padding: 0.9rem 1.2rem; font-size: 0.82rem; color: var(--gris); margin-top: 2rem; border-radius: 12px; }
+.note-bar strong { color: var(--rosa); }
+.upgrade-bar { background: var(--rosa-pale); border: 1px solid rgba(255,45,120,0.2); padding: 0.9rem 1.2rem; font-size: 0.83rem; color: var(--gris); margin-bottom: 1.5rem; border-radius: var(--r); }
+.upgrade-bar strong { color: var(--rosa); }
+@media (max-width: 768px) { .cg { grid-template-columns: 1fr; } .extras-grid { grid-template-columns: 1fr 1fr; } .item { gap: 1rem; } }
+</style>
+</head>
+<body>
+<div class="page-header"><div class="container"><span class="section-label">La carta completa</span><h1>Nuestra Carta</h1><p class="lead" style="margin-top:.8rem;color:#333">Ingredientes auténticos, sabores que no piden perdón.</p></div></div>
+<div class="tabs-bar"><div class="tabs">
+  <button class="tab active" onclick="goTo('tacos')">Tacos</button>
+  <button class="tab" onclick="goTo('burritos')">Burritos</button>
+  <button class="tab" onclick="goTo('quesadillas')">Quesadillas</button>
+  <button class="tab" onclick="goTo('especialidades')">Especialidades</button>
+  <button class="tab" onclick="goTo('nachos')">Nachos & Ensaladas</button>
+  <button class="tab" onclick="goTo('salsas')">Salsas & Extras</button>
+  <button class="tab" onclick="goTo('postres')">Postres</button>
+  <button class="tab" onclick="goTo('bebidas')">Bebidas</button>
+</div></div>
+<div class="container">
+
+<div class="menu-cat" id="tacos">
+  <div class="cat-header fade-up"><h2 class="cat-name">Tacos</h2><span class="cat-note">3 tortillas de maíz artesanal con proteína a elección</span></div>
+  <div class="items">
+    <div class="item fade-up"><div><div class="iname">Camarón / Shrimp</div><div class="idesc">Camarones empanizados con mayonesa de chipotle y pico de gallo.</div><div class="itags"><span class="tag">Crustáceos · Huevos</span></div></div><div class="iprice">€11,5</div></div>
+    <div class="item fade-up"><div><div class="iname">Birria de Res</div><div class="idesc">Ternera adobada con chiles, jitomates y canela. Con caldo de birria, cebolla y cilantro.</div><div class="itags"><span class="tag">Bestseller</span></div></div><div class="iprice">€9</div></div>
+    <div class="item fade-up"><div><div class="iname">Quesabirria</div><div class="idesc">Birria con queso gouda a la plancha. Caldo de birria, cebolla y cilantro.</div><div class="itags"><span class="tag-gris tag">Leche</span></div></div><div class="iprice">€10</div></div>
+    <div class="item fade-up"><div><div class="iname">Cochinita Pibil</div><div class="idesc">Pierna de cerdo en cocción lenta con achiote, canela, naranja agria y cebollas encurtidas.</div></div><div class="iprice">€7</div></div>
+    <div class="item fade-up"><div><div class="iname">Tinga de Pollo</div><div class="idesc">Pechuga de pollo deshebrada con jitomate, cebolla y chipotle.</div></div><div class="iprice">€8</div></div>
+    <div class="item fade-up"><div><div class="iname">Vegetales</div><div class="idesc">Pimientos salteados y cebollas encurtidas.</div><div class="itags"><span class="tag">Vegano</span></div></div><div class="iprice">€6</div></div>
+  </div>
+  <div class="note-bar"><strong>+10% en terraza.</strong> Alérgenos: Apio · Crustáceos · Huevos · Mostaza · Sésamo · Leche.</div>
+</div>
+
+<div class="menu-cat" id="burritos">
+  <div class="cat-header fade-up"><h2 class="cat-name">Burritos</h2><span class="cat-note">Tortilla de trigo · queso gouda · lechuga · arroz mexicano</span></div>
+  <div class="items">
+    <div class="item fade-up"><div><div class="iname">Camarón</div><div class="idesc">Camarones empanizados con mayonesa de chipotle y pico de gallo.</div></div><div class="iprice">€12</div></div>
+    <div class="item fade-up"><div><div class="iname">Birria de Res</div><div class="idesc">Ternera con chiles, jitomates, canela, cebolla y cilantro picados.</div></div><div class="iprice">€10</div></div>
+    <div class="item fade-up"><div><div class="iname">Cochinita Pibil</div><div class="idesc">Pierna de cerdo en cocción lenta con achiote, canela y naranja agria.</div></div><div class="iprice">€8,5</div></div>
+    <div class="item fade-up"><div><div class="iname">Tinga de Pollo</div><div class="idesc">Pollo deshebrado con jitomate, cebolla, chipotle y cilantro.</div></div><div class="iprice">€8,5</div></div>
+    <div class="item fade-up"><div><div class="iname">Vegetales</div><div class="idesc">Pimientos salteados y cebollas encurtidas.</div><div class="itags"><span class="tag">Vegano</span></div></div><div class="iprice">€6</div></div>
+  </div>
+</div>
+
+<div class="menu-cat" id="quesadillas">
+  <div class="cat-header fade-up"><h2 class="cat-name">Quesadillas</h2><span class="cat-note">Tortillas de trigo con queso gouda y proteína a elección</span></div>
+  <div class="items">
+    <div class="item fade-up"><div><div class="iname">Birria de Res</div><div class="idesc">Ternera con chiles, jitomates, canela, cebolla y cilantro.</div></div><div class="iprice">€10</div></div>
+    <div class="item fade-up"><div><div class="iname">Cochinita Pibil</div><div class="idesc">Pierna de cerdo con achiote, canela y naranja agria.</div></div><div class="iprice">€8</div></div>
+    <div class="item fade-up"><div><div class="iname">Tinga de Pollo</div><div class="idesc">Pollo deshebrado con jitomate, cebolla y chipotle.</div></div><div class="iprice">€9</div></div>
+    <div class="item fade-up"><div><div class="iname">Solo Queso</div><div class="idesc">Tortillas de trigo con queso gouda fundido.</div><div class="itags"><span class="tag">Vegetariano</span></div></div><div class="iprice">€6</div></div>
+  </div>
+</div>
+
+<div class="menu-cat" id="especialidades">
+  <div class="cat-header fade-up"><h2 class="cat-name">Especialidades</h2><span class="cat-note">Los platos más especiales de nuestra cocina</span></div>
+  <div class="items">
+    <div class="item fade-up"><div><div class="iname">Sopa de Tortillas</div><div class="idesc">Caldo de pollo con chile pasilla, árbol y jitomate. Con tortilla frita, aguacate, crema, queso fresco, cilantro y opcional chicharrón.</div></div><div class="iprice">€12,5</div></div>
+    <div class="item fade-up"><div><div class="iname">Chilaquiles Rojos</div><div class="idesc">Totopos crujientes bañados en salsa roja casera, con pollo deshebrado, crema, queso fresco, cebolla y cilantro.</div></div><div class="iprice">€12</div></div>
+    <div class="item fade-up"><div><div class="iname">Enchiladas Salsa Verde</div><div class="idesc">Rellenas de pollo, bañadas en salsa verde, con crema, queso fresco y cebolla.</div></div><div class="iprice">€10</div></div>
+    <div class="item fade-up"><div><div class="iname">Tacos Dorados de Birria</div><div class="idesc">Tacos crujientes rellenos de birria, con lechuga, crema agria, queso fresco y aguacate.</div></div><div class="iprice">€10,5</div></div>
+    <div class="item fade-up"><div><div class="iname">Tostadas de Tinga de Pollo</div><div class="idesc">Con frijoles refritos, pollo en salsa chipotle-jitomate, lechuga, crema, queso fresco y aguacate.</div></div><div class="iprice">€12</div></div>
+  </div>
+</div>
+
+<div class="menu-cat" id="nachos">
+  <div class="cat-header fade-up"><h2 class="cat-name">Nachos & Ensaladas</h2><span class="cat-note">Nachos de tortilla de maíz sin gluten — tamaño grande</span></div>
+  <div class="items">
+    <div class="item fade-up"><div><div class="iname">Nachos con Cheddar & Pico de Gallo</div><div class="idesc">Nachos sin gluten con queso cheddar fundido y pico de gallo fresco.</div><div class="itags"><span class="tag">Sin gluten</span></div></div><div class="iprice">€8</div></div>
+    <div class="item fade-up"><div><div class="iname">Jalapeño Poppers</div><div class="idesc">Jalapeños empanizados rellenos de queso cheddar.</div><div class="itags"><span class="tag-gris tag">6 ud</span></div></div><div class="iprice">€9</div></div>
+    <div class="item fade-up"><div><div class="iname">Ensalada de Camarón</div><div class="idesc">Lechuga iceberg, camarones empanizados, guacamole, cheddar y pico de gallo. Con ranch picante.</div></div><div class="iprice">€12</div></div>
+    <div class="item fade-up"><div><div class="iname">Ensalada Mexicana</div><div class="idesc">Lechuga iceberg, tinga de pollo, chips de tortilla, guacamole, cheddar y pico de gallo. Con ranch picante.</div></div><div class="iprice">€9</div></div>
+  </div>
+  <div style="margin-top:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem">
+    <div><p style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rosa);font-weight:600;margin-bottom:1rem">Añadir proteína</p><div class="extras-grid" style="grid-template-columns:1fr"><div class="extra"><span>Birria</span><span class="eprice">€6</span></div><div class="extra"><span>Tinga</span><span class="eprice">€4,5</span></div><div class="extra"><span>Mixtos</span><span class="eprice">€5</span></div></div></div>
+    <div><p style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rosa);font-weight:600;margin-bottom:1rem">Extras</p><div class="extras-grid" style="grid-template-columns:1fr"><div class="extra"><span>Frijol refrito</span><span class="eprice">€3</span></div><div class="extra"><span>Jalapeños</span><span class="eprice">€2</span></div><div class="extra"><span>Guacamole</span><span class="eprice">€3</span></div><div class="extra"><span>Crema Agria</span><span class="eprice">€2</span></div></div></div>
+  </div>
+</div>
+
+<div class="menu-cat" id="salsas">
+  <div class="cat-header fade-up"><h2 class="cat-name">Salsas & Extras</h2><span class="cat-note">Aquí puro chile del que pica · tamaño grande</span></div>
+  <div class="extras-grid fade-up">
+    <div class="extra"><span>Caldo de Birria</span><span class="eprice">€3</span></div>
+    <div class="extra"><span>Salsa de Habanero</span><span class="eprice">€3,5</span></div>
+    <div class="extra"><span>Salsa Verde</span><span class="eprice">€3,5</span></div>
+    <div class="extra"><span>Salsa Roja</span><span class="eprice">€4</span></div>
+    <div class="extra"><span>Salsa Chile de Árbol</span><span class="eprice">€3</span></div>
+    <div class="extra"><span>Pico de Gallo</span><span class="eprice">€2</span></div>
+    <div class="extra"><span>Crema Agria</span><span class="eprice">€3,5</span></div>
+  </div>
+</div>
+
+<div class="menu-cat" id="postres">
+  <div class="cat-header fade-up"><h2 class="cat-name">Postres</h2><span class="cat-note">¡No te hagas de la boca chiquita! Siempre hay espacio para el postre.</span></div>
+  <div class="items">
+    <div class="item fade-up"><div><div class="iname">Pastel Tres Leches</div><div class="idesc">Bizcocho de vainilla bañado en leche evaporada, condensada y crema.</div></div><div class="iprice">€8</div></div>
+    <div class="item fade-up"><div><div class="iname">Pastel de Elote</div><div class="idesc">Bizcocho de granos de maíz, sabor dulce y natural.</div></div><div class="iprice">€8</div></div>
+    <div class="item fade-up"><div><div class="iname">Pastel Imposible</div><div class="idesc">Combinación de flan napolitano con pan de chocolate esponjoso.</div></div><div class="iprice">€8</div></div>
+    <div class="item fade-up"><div><div class="iname">Pastel Mil Hojas</div><div class="idesc">Capas de hojaldre intercaladas con crema pastelera.</div></div><div class="iprice">€8</div></div>
+    <div class="item fade-up"><div><div class="iname">Churros</div><div class="idesc">6 unidades de churros caseros.</div><div class="itags"><span class="tag-gris tag">6 ud</span></div></div><div class="iprice">€8</div></div>
+    <div class="item fade-up"><div><div class="iname">Churros con Rompope</div><div class="idesc">6 churros caseros servidos con rompope.</div></div><div class="iprice">€10</div></div>
+  </div>
+</div>
+
+<div class="menu-cat" id="bebidas">
+  <div class="cat-header fade-up"><h2 class="cat-name">Bebidas</h2></div>
+  <div class="drink-nav fade-up">
+    <button class="dnav active" onclick="showDrink('cocktails',this)">Cócteles</button>
+    <button class="dnav" onclick="showDrink('especiales',this)">Cócteles especiales</button>
+    <button class="dnav" onclick="showDrink('cervezas',this)">Cervezas</button>
+    <button class="dnav" onclick="showDrink('vinos',this)">Vinos</button>
+    <button class="dnav" onclick="showDrink('vermut',this)">Vermut & gin</button>
+    <button class="dnav" onclick="showDrink('refrescos',this)">Refrescos</button>
+  </div>
+  <div class="dpanel active" id="p-cocktails">
+    <div class="upgrade-bar"><strong>Upgrade:</strong> Tequila Tradicional Reposado +€2 en cualquier cóctel.</div>
+    <div class="cg">
+      <div class="cc"><div class="cname">Chingolandia</div><p class="cdesc">Tequila Cuervo Reposado, Voltaje eléctrico, puré de maracuyá, almíbar, sirope de chili habanero, soda.</p><div class="cprice">€12</div></div>
+      <div class="cc"><div class="cname">Chinga Margarita</div><p class="cdesc">Tequila Silver 100% agave, Triple Sec, zumo de lima.</p><div class="cprice">€10</div></div>
+      <div class="cc"><div class="cname">Mexico Mule</div><p class="cdesc">Tequila Silver, puré de mango, zumo de lima, Ginger Beer.</p><div class="cprice">€10</div></div>
+      <div class="cc"><div class="cname">Paloma</div><p class="cdesc">Tequila Silver, sirope de agave, zumo de lima, soda de pomelo.</p><div class="cprice">€10</div></div>
+      <div class="cc"><div class="cname">Expresso Tequila</div><p class="cdesc">Tequila Silver, Mezcal, café espresso, licor de café, sirope de vainilla.</p><div class="cprice">€10</div></div>
+      <div class="cc"><div class="cname">Mojito</div><p class="cdesc">Ron Silver, almíbar, menta, soda. (Lima / Naranja / Granada / Maracuyá / Chili)</p><div class="cprice">€10</div></div>
+      <div class="cc"><div class="cname">Michelada de Barril</div><p class="cdesc">Cerveza de barril, limón, salsa inglesa, picante, jugo de tomate, sal y pimienta.</p><div class="cprice">€6</div></div>
+    </div>
+  </div>
+  <div class="dpanel" id="p-especiales"><div class="cg">
+    <div class="cc"><div class="cname">Mariachi Loco</div><p class="cdesc">Tequila con jamaica y cerveza, coronado con sombrero de Tajín.</p><div class="cprice">€12</div></div>
+    <div class="cc"><div class="cname">Cantarito</div><p class="cdesc">Tequila, pomelo y tamarindo — el sabor de Guadalajara.</p><div class="cprice">€12</div></div>
+    <div class="cc"><div class="cname">Chingadazo de Mango</div><p class="cdesc">Tequila, mango y sandía perfectamente combinados.</p><div class="cprice">€12</div></div>
+    <div class="cc"><div class="cname">Chingaquedito</div><p class="cdesc">Rompope, café y cacao. Cóctel de postre de los jardines de Puebla.</p><div class="cprice">€14</div></div>
+    <div class="cc"><div class="cname">Mezcalita</div><p class="cdesc">Mezcal, tamarindo y un toque efervescente. Oaxaca en Barcelona.</p><div class="cprice">€12</div></div>
+  </div></div>
+  <div class="dpanel" id="p-cervezas"><div class="items">
+    <div class="item"><div><div class="iname">Caña de barril</div></div><div class="iprice">€2,5</div></div>
+    <div class="item"><div><div class="iname">Caña Epidor / Caña clara</div></div><div class="iprice">€3</div></div>
+    <div class="item"><div><div class="iname">Jarra de barril</div></div><div class="iprice">€4</div></div>
+    <div class="item"><div><div class="iname">Michelada con Corona / Corona Zero</div></div><div class="iprice">€7</div></div>
+    <div class="item"><div><div class="iname">Michelada con Modelo / Pacifico</div></div><div class="iprice">€8</div></div>
+    <div class="item"><div><div class="iname">Corona / Corona Zero</div></div><div class="iprice">€5</div></div>
+    <div class="item"><div><div class="iname">Modelo Especial / Negra</div></div><div class="iprice">€5</div></div>
+    <div class="item"><div><div class="iname">Pacifico Clara</div></div><div class="iprice">€6</div></div>
+  </div></div>
+  <div class="dpanel" id="p-vinos"><div class="items">
+    <div class="item"><div><div class="iname">Blanco / Tinto / Rosado</div></div><div class="iprice">€4 copa · €18 botella</div></div>
+    <div class="item"><div><div class="iname">Sangría</div></div><div class="iprice">€6 copa · €20 jarra</div></div>
+  </div>
+  <p style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rosa);font-weight:600;margin:2rem 0 1rem">Aguas mexicanas — €6 copa</p>
+  <div class="extras-grid"><div class="extra"><span>Tamarindo</span><span class="eprice">€6</span></div><div class="extra"><span>Jamaica</span><span class="eprice">€6</span></div><div class="extra"><span>Horchata</span><span class="eprice">€6</span></div></div></div>
+  <div class="dpanel" id="p-vermut"><div class="items">
+    <div class="item"><div><div class="iname">Vermut Rojo / Blanco</div></div><div class="iprice">€4</div></div>
+    <div class="item"><div><div class="iname">Gin Tonic</div></div><div class="iprice">€6</div></div>
+    <div class="item"><div><div class="iname">Aperol Spritz</div></div><div class="iprice">€6</div></div>
+  </div></div>
+  <div class="dpanel" id="p-refrescos"><div class="items">
+    <div class="item"><div><div class="iname">Pepsi / Pepsi Zero / 7Up</div></div><div class="iprice">€3</div></div>
+    <div class="item"><div><div class="iname">Agua / Agua con gas</div></div><div class="iprice">€2 / €3</div></div>
+    <div class="item"><div><div class="iname">Schweppes Limón / Naranja</div></div><div class="iprice">€3</div></div>
+    <div class="item"><div><div class="iname">Té Helado</div></div><div class="iprice">€4</div></div>
+  </div></div>
+</div>
+
+</div>
+<script src="js/layout.js"></script>
+<script>
+const secIds=['tacos','burritos','quesadillas','especialidades','nachos','salsas','postres','bebidas'];
+function goTo(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'});document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',secIds[i]===id));}
+function showDrink(id,btn){document.querySelectorAll('.dpanel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.dnav').forEach(b=>b.classList.remove('active'));document.getElementById('p-'+id)?.classList.add('active');btn.classList.add('active');}
+window.addEventListener('scroll',()=>{let c='';secIds.forEach(id=>{const el=document.getElementById(id);if(el&&scrollY>=el.offsetTop-200)c=id;});document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',secIds[i]===c));},{passive:true});
+</script>
+</body>
+</html>
