@@ -2,7 +2,7 @@
 
 const NAV = `<nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="assets/logo.svg" alt="Chingolandia"></a>
+    <a href="index.html" class="nav-logo"><img src="assets/logo.svg" alt="Chingolandia - Restaurante Mexicano Barcelona" width="42" height="42"></a>
     <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="menu.html">Menú</a></li>
@@ -32,7 +32,7 @@ const FOOTER = `<footer>
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-logo"><img src="assets/logo.svg" alt="Chingolandia"></div>
+        <div class="footer-logo"><img src="assets/logo.svg" alt="Chingolandia - Restaurante Mexicano Barcelona" width="42" height="42"></div>
         <p class="footer-tagline">Auténtica comida mexicana en el corazón de L'Eixample, Barcelona. Mex Crazy Delights.</p>
       </div>
       <div class="footer-col"><h4>Navegar</h4><ul>
