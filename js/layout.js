@@ -33,7 +33,7 @@ const FOOTER = `<footer>
     <div class="footer-grid">
       <div>
         <div class="footer-logo"><img src="assets/logo.svg" alt="Chingolandia - Restaurante Mexicano Barcelona" width="42" height="42"></div>
-        <p class="footer-tagline">Auténtica comida mexicana en el corazón de L'Eixample, Barcelona. Mex Crazy Delights.</p>
+        <p class="footer-tagline">Auténtica comida mexicana en el corazón de L'Eixample, Barcelona. Chingo Landia.</p>
       </div>
       <div class="footer-col"><h4>Navegar</h4><ul>
         <li><a href="index.html">Inicio</a></li><li><a href="menu.html">Menú</a></li>
